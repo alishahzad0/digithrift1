@@ -1,4 +1,4 @@
-# MERN Ecommerce
+# Digithrift
 
 ## Description
 
