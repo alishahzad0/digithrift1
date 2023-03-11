@@ -265,6 +265,25 @@ class Navigation extends React.PureComponent {
                       Shop
                     </NavLink>
                   </NavItem>
+                  <NavItem>
+                    <NavLink
+                      tag={ActiveLink}
+                      to='/auction'
+                      activeClassName='active'
+                    >
+                      Auction
+                    </NavLink>
+                  </NavItem>
+                  {user.bCustomer ? <NavItem>
+                    <NavLink
+                      tag={ActiveLink}
+                      to='/tender'
+                      activeClassName='active'
+                    >
+                      Tender
+                    </NavLink>
+                  </NavItem> : ""
+                  }
                   {authenticated ? (
                     <UncontrolledDropdown nav inNavbar>
                       <DropdownToggle nav>

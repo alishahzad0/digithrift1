@@ -103,6 +103,17 @@ class Signup extends React.PureComponent {
                   }}
                 />
               </Col>
+              <Col xs='12' md='12'>
+            <Checkbox
+              id={'default'}
+              label={'Business Customer'}
+              name={'bCustomer'}
+              checked={signupFormData.bCustomer}
+              onChange={(name, value) => {
+                signupChange(name, value);
+              }}
+            />
+          </Col>
             </Col>
             <Col
               xs={{ size: 12, order: 1 }}

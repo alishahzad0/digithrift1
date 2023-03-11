@@ -9,7 +9,9 @@
     },
     { "to": "/address", "name": "Address", "prefix": "/dashboard" },
     { "to": "/product", "name": "Products", "prefix": "/dashboard" },
+    { "to": "/auction", "name": "Auctions", "prefix": "/dashboard" },
     { "to": "/category", "name": "Categories", "prefix": "/dashboard" },
+    { "to": "/verifyUser", "name": "Verify User", "prefix": "/dashboard" },
     { "to": "/brand", "name": "Brand", "prefix": "/dashboard" },
     { "to": "/users", "name": "Users", "prefix": "/dashboard" },
     { "to": "/merchant", "name": "Merchants", "prefix": "/dashboard" },
@@ -29,6 +31,7 @@
     { "to": "/address", "name": "Address", "prefix": "/dashboard" },
     { "to": "/brand", "name": "Brand", "prefix": "/dashboard" },
     { "to": "/product", "name": "Products", "prefix": "/dashboard" },
+    { "to": "/auction", "name": "Auctions", "prefix": "/dashboard" },
     { "to": "/orders", "name": "Orders", "prefix": "/dashboard" },
     { "to": "/wishlist", "name": "WishList", "prefix": "/dashboard" },
     { "to": "/support", "name": "Support" }
@@ -42,8 +45,25 @@
       "provider": ["Email"]
     },
     { "to": "/address", "name": "Address", "prefix": "/dashboard" },
+    { "to": "/document", "name": "Document", "prefix": "/dashboard" },
+    { "to": "/orders", "name": "Orders", "prefix": "/dashboard" },
+    { "to": "/wishlist", "name": "WishList", "prefix": "/dashboard" },
+    { "to": "/support", "name": "Support" }
+  ],
+  "ROLE BUSINESS": [
+    { "to": "", "name": "Account Details", "prefix": "/dashboard" },
+    {
+      "to": "/security",
+      "name": "Account Security",
+      "prefix": "/dashboard",
+      "provider": ["Email"]
+    },
+    { "to": "/address", "name": "Address", "prefix": "/dashboard" },
+    { "to": "/tender", "name": "Tender", "prefix": "/dashboard" },
+    { "to": "/document", "name": "Document", "prefix": "/dashboard" },
     { "to": "/orders", "name": "Orders", "prefix": "/dashboard" },
     { "to": "/wishlist", "name": "WishList", "prefix": "/dashboard" },
     { "to": "/support", "name": "Support" }
   ]
+
 }

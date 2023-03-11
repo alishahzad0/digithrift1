@@ -18,7 +18,8 @@ const initialState = {
     email: '',
     firstName: '',
     lastName: '',
-    password: ''
+    password: '',
+    bCustomer: false
   },
   formErrors: {},
   isSubmitting: false,
@@ -60,7 +61,8 @@ const signupReducer = (state = initialState, action) => {
           email: '',
           firstName: '',
           lastName: '',
-          password: ''
+          password: '',
+          bCustomer: false
         },
         formErrors: {},
         isLoading: false

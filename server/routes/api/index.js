@@ -5,6 +5,8 @@ const userRoutes = require('./user');
 const addressRoutes = require('./address');
 const newsletterRoutes = require('./newsletter');
 const productRoutes = require('./product');
+const auctionRoutes = require('./auction');
+const tenderRoutes = require('./tender');
 const categoryRoutes = require('./category');
 const brandRoutes = require('./brand');
 const contactRoutes = require('./contact');
@@ -28,6 +30,12 @@ router.use('/newsletter', newsletterRoutes);
 
 // product routes
 router.use('/product', productRoutes);
+
+// auction routes
+router.use('/auction', auctionRoutes);
+
+// auction routes
+router.use('/tender', tenderRoutes);
 
 // category routes
 router.use('/category', categoryRoutes);

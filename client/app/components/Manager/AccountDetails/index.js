@@ -12,6 +12,7 @@ import { EMAIL_PROVIDER } from '../../../constants';
 import UserRole from '../UserRole';
 import Input from '../../Common/Input';
 import Button from '../../Common/Button';
+import { Link } from 'react-router-dom';
 
 const AccountDetails = props => {
   const { user, accountChange, updateProfile } = props;
@@ -35,6 +36,9 @@ const AccountDetails = props => {
             )}
           </p>
           <UserRole user={user} />
+          <div>
+            {(user.role === 'ROLE MEMBER' && user?.bCustomer ) ?  ((user.verifyDocument) ? <span className='text-success'>Your Account Verify</span> : <Link className='text-danger' to="/dashboard/document">Please Verify Account</Link>) : ""}
+          </div>
         </div>
       </div>
       <form onSubmit={handleSubmit}>

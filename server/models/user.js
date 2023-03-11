@@ -24,6 +24,18 @@ const UserSchema = new Schema({
   password: {
     type: String
   },
+  bCustomer: {
+    type: Boolean,
+    default: false
+  },
+  verifyDocument: {
+    type: Boolean,
+    default: false
+  },
+  submitDocument: {
+    type: Boolean,
+    default: false
+  },
   merchant: {
     type: Schema.Types.ObjectId,
     ref: 'Merchant',

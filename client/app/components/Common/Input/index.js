@@ -120,7 +120,7 @@ const Input = props => {
         {label && <label>{label}</label>}
         <div className='input-text-block'>
           <input
-            className={'input-text'}
+            className={'input-text input-group'}
             autoComplete={autoComplete}
             type={type}
             onChange={e => {

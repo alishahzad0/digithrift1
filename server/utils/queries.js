@@ -82,6 +82,77 @@ exports.getStoreProductsQuery = (min, max, rating) => {
   return basicQuery;
 };
 
+exports.getStoreAuctionsQuery = (min, max, rating) => {
+  rating = Number(rating);
+  max = Number(max);
+  min = Number(min);
+
+
+
+
+  const basicQuery = [
+    {
+      $lookup: {
+        from: 'brands',
+        localField: 'brand',
+        foreignField: '_id',
+        as: 'brands'
+      }
+    },
+    {
+      $unwind: {
+        path: '$brands',
+        preserveNullAndEmptyArrays: true
+      }
+    },
+    {
+      $addFields: {
+        'brand.name': '$brands.name',
+        'brand._id': '$brands._id',
+        'brand.isActive': '$brands.isActive'
+      }
+    },
+    {
+      $match: {
+        'brand.isActive': true
+      }
+    },
+    {
+      $lookup: {
+        from: 'reviews',
+        localField: '_id',
+        foreignField: 'product',
+        as: 'reviews'
+      }
+    },
+    {
+      $addFields: {
+        totalRatings: { $sum: '$reviews.rating' },
+        totalReviews: { $size: '$reviews' }
+      }
+    },
+    {
+      $addFields: {
+        averageRating: {
+          $cond: [
+            { $eq: ['$totalReviews', 0] },
+            0,
+            { $divide: ['$totalRatings', '$totalReviews'] }
+          ]
+        }
+      }
+    },
+    {
+      $project: {
+        brands: 0,
+        reviews: 0
+      }
+    }
+  ];
+
+  return basicQuery;
+};
+
 exports.getStoreProductsWishListQuery = userId => {
   const wishListQuery = [
     {

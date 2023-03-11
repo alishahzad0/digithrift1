@@ -14,9 +14,11 @@ import dashboardLinks from './links.json';
 import { isDisabledMerchantAccount } from '../../utils/app';
 import Admin from '../../components/Manager/Dashboard/Admin';
 import Merchant from '../../components/Manager/Dashboard/Merchant';
+import Business from '../../components/Manager/Dashboard/Business';
 import Customer from '../../components/Manager/Dashboard/Customer';
 import DisabledMerchantAccount from '../../components/Manager/DisabledAccount/Merchant';
 import LoadingIndicator from '../../components/Common/LoadingIndicator';
+
 
 class Dashboard extends React.PureComponent {
   componentDidMount() {
@@ -47,8 +49,15 @@ class Dashboard extends React.PureComponent {
             links={dashboardLinks[ROLES.Merchant]}
             toggleMenu={toggleDashboardMenu}
           />
-        ) : (
-          <Customer
+        ) :  ( user?.bCustomer ? 
+
+          <Business
+            user={user}
+            isMenuOpen={isMenuOpen}
+            links={dashboardLinks[ROLES.Business]}
+            toggleMenu={toggleDashboardMenu}
+          />
+          : <Customer
             user={user}
             isMenuOpen={isMenuOpen}
             links={dashboardLinks[ROLES.Member]}

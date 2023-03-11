@@ -15,7 +15,7 @@ const ProductList = props => {
     <div className='p-list'>
       {products.map((product, index) => (
         <Link
-          to={`/dashboard/product/edit/${product._id}`}
+          to={`/dashboard/auction/edit/${product._id}`}
           key={index}
           className='d-flex flex-row align-items-center mx-0 mb-3 product-box'
         >
